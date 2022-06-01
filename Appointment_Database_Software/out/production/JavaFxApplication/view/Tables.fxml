@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="531.0" prefWidth="1073.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Tables">
+   <children>
+      <TabPane layoutX="-2.0" prefHeight="531.0" prefWidth="1079.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="customerTab" text="Customer Records">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="503.0" prefWidth="1066.0">
+                     <children>
+                        <Label layoutX="435.0" layoutY="43.0" text="Customer Records" />
+                        <TableView fx:id="customerRecordsTable" layoutX="150.0" layoutY="76.0" prefHeight="289.0" prefWidth="667.0">
+                          <columns>
+                            <TableColumn fx:id="customerIDCol" prefWidth="53.33334732055664" text="ID" />
+                            <TableColumn fx:id="customerNameCol" prefWidth="140.0" text="Name" />
+                              <TableColumn fx:id="addressCol" prefWidth="285.3333435058594" text="Address" />
+                              <TableColumn fx:id="postalCodeCol" minWidth="0.0" prefWidth="80.6666259765625" text="Postal Code" />
+                              <TableColumn fx:id="phoneNumberCol" minWidth="6.6666259765625" prefWidth="108.0" text="Phone Number" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="BOTTOM_RIGHT" layoutX="395.0" layoutY="402.0" prefHeight="22.0" prefWidth="177.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="addCustomerBtn" mnemonicParsing="false" onAction="#onActionAddCustomerMenu" text="Add" />
+                              <Button fx:id="updateCustomerBtn" mnemonicParsing="false" onAction="#onActionUpdateCustomerMenu" text="Update" />
+                              <Button fx:id="deleteCustomerBtn" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeleteCustomer" text="Delete" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="closeApplicationBtn" layoutX="704.0" layoutY="402.0" mnemonicParsing="false" onAction="#onActionCloseApplication" prefHeight="25.0" prefWidth="73.0" text="Exit" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="appointmentsTab" text="Appointments">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="appointmentsTable" layoutX="48.0" layoutY="46.0" prefHeight="331.0" prefWidth="970.0">
+                          <columns>
+                              <TableColumn fx:id="appointmentIDCol" prefWidth="63.333314299583435" text="Appt ID" />
+                              <TableColumn fx:id="titleCol" prefWidth="101.99999237060547" text="Title" />
+                            <TableColumn fx:id="descriptionCol" prefWidth="136.0000457763672" text="Description" />
+                            <TableColumn fx:id="locationCol" prefWidth="155.33331298828125" text="Location" />
+                              <TableColumn fx:id="appointmentStartCol" minWidth="0.0" prefWidth="127.33331298828125" text="Start" />
+                              <TableColumn fx:id="appointmentEndCol" prefWidth="128.0" text="End" />
+                              <TableColumn fx:id="customerIDCol2" prefWidth="86.00006103515625" text="Customer ID" />
+                              <TableColumn fx:id="userIDCol" prefWidth="56.6666259765625" text="User ID" />
+                              <TableColumn fx:id="contactCol" prefWidth="114.66668701171875" text="Contact" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="BOTTOM_RIGHT" layoutX="452.0" layoutY="398.0" prefHeight="39.0" prefWidth="175.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="addAppointmentBtn" mnemonicParsing="false" onAction="#onActionAddAppointmentMenu" text="Add" />
+                              <Button fx:id="updateAppointmentBtn" mnemonicParsing="false" onAction="#onActionUpdateAppointmentMenu" text="Update" />
+                              <Button fx:id="deleteAppointmentBtn" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDeleteAppointment" text="Delete" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="502.0" layoutY="14.0" text="Appointments" />
+                        <HBox layoutX="37.0" layoutY="418.0" prefHeight="28.0" prefWidth="331.0" spacing="20.0">
+                           <children>
+                              <Label text="Sort by:" />
+                              <RadioButton fx:id="sortByAllRBtn" layoutX="148.0" layoutY="10.0" mnemonicParsing="false" onAction="#sortByAll" prefHeight="17.0" prefWidth="44.0" selected="true" text="All">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sortByTG" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="sortByMonthRBtn" mnemonicParsing="false" onAction="#sortByMonth" text="Month" toggleGroup="$sortByTG" />
+                              <RadioButton fx:id="sortByWeekRBtn" mnemonicParsing="false" onAction="#sortByWeek" text="Week" toggleGroup="$sortByTG" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="reportsTab" text="Reports">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="38.0" layoutY="70.0" prefHeight="399.0" prefWidth="1013.0" spacing="25.0">
+                           <children>
+                              <TextArea fx:id="appointmentList" prefHeight="399.0" prefWidth="267.0" />
+                              <TextArea fx:id="contactScheduleList" prefHeight="399.0" prefWidth="386.0" />
+                              <TextArea fx:id="customerContactList" prefHeight="399.0" prefWidth="293.0" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="118.0" layoutY="53.0" prefHeight="17.0" prefWidth="105.0" text="Appointment List" />
+                        <Label layoutX="477.0" layoutY="53.0" text="Contact Schedule" />
+                        <Label layoutX="817.0" layoutY="53.0" text="Customer Contact Information" />
+                        <Button fx:id="generateReportsBtn" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#onActionGenerateReports" prefHeight="25.0" prefWidth="120.0" text="Generate Reports" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
