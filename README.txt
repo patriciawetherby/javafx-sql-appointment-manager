@@ -1,12 +1,10 @@
 Title: C195PA
-Description: This application allows users to login and access Customer and Appointment records that match the client_schedule database.
+Description: This application allows users to login and access Customer and Appointment records that match the client_schedule database in MySQLWorkbench.
 It allows them to add/update/delete records and gives alerts about appointment times if one is within 15 minutes. The business hours are
 EST and the application conveniently converts the user's local time to match the business hours.
 
-Date: 04/22/2022
-Author: Patricia Wetherby
-Contact: pcampo2@wgu.edu
-Student Application Version v3
+Screenshots folder contains images of the project when running.
+
 IntelliJ IDEA 2021.1.1.3
 --------------------------
 SDK Version:11 version 11.0.11
