@@ -1,4 +1,4 @@
-Title: C195PA
+Title: javafx-sql-appointment-manager
 Description: This application allows users to login and access Customer and Appointment records that match the client_schedule database in MySQLWorkbench.
 It allows them to add/update/delete records and gives alerts about appointment times if one is within 15 minutes. The business hours are
 EST and the application conveniently converts the user's local time to match the business hours.
@@ -26,6 +26,17 @@ my-sql-connector-java-8.0.27
 JavaFX:
 JavaFX API of version 17 by JavaFX 
 Runtime Version 11.0.2
+
+UI Created using SceneBuilder
+
+Product Version
+JavaFX Scene Builder 17.0.0
+
+Build Information
+Version 17.0.0
+Date: 2021-09-29 13:41:58
+JavaFX Version: 17
+Java Version: 17, OpenJDK Runtime Environment
 
 -------------------------
 
